@@ -19,23 +19,19 @@ app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', (request, response) => {
-  // Hello, it's good to see you here.
-  // Change the name and email so we know who you are!
-  // let args = {
-  //     data: {
-  //       "firstname":"Han",
-  //       "lastname":"Solo",
-  //       "email":"hsolo@disney.com",
-  //       "id":appID
-  //     },
-  //     headers: { "Content-Type": "application/json" }
-  // };
-  // You are nearly there!
-  // client.post("http://onboarder-jsc.cleverapps.io/play", args, function (data, response) {
-  //   console.log(response);
-  // });
-  // If you want to dig further you should watch this: https://www.youtube.com/watch?v=CeaoTAXkIZE
-
+   let args = {
+       data: {
+         "firstname":"Laurent",
+         "lastname":"Ruaud",
+         "email":"laurent.ruaud@serli.com",
+         "id":appID
+       },
+       headers: { "Content-Type": "application/json" }
+   };
+   client.post("http://onboarder-jsc.cleverapps.io/play", args, function (data, response) {
+     console.log(response);
+   });
+  
   response.render('home', {
     appID: appID
   })
